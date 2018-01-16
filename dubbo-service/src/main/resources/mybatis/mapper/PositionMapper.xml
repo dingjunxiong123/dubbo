@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dubbo.core.server.mapper.PositionMapper">
+	<resultMap type="com.dubbo.core.common.entity.Position" id="BaseResultMap">
+		<id 	property="id" 		column="id" />
+		<result property="name" 	column="name" />
+		<result property="deptId" 	column="dept_id" />
+	</resultMap>
+
+	<sql id="all_column_list">
+		id,name,dept_id
+	</sql>
+
+	<select id="queryAll" resultMap="BaseResultMap">
+		select <include refid="all_column_list" /> from t_position
+	</select>
+
+</mapper>
